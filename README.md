@@ -90,5 +90,3 @@ Contributions to this project have been made by the following individuals:
 - **Felipe Sinnecker**, Universidade Federal do Rio de Janeiro, Brazil
 
 ```
-
-This `README.md` file is ready to be used in your GitHub repository. You can copy and paste it directly into your project. Let me know if you need any further adjustments!
