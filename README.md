@@ -88,5 +88,3 @@ Contributions to this project have been made by the following individuals:
 - **Prof. Marcia Fampa**, Universidade Federal do Rio de Janeiro, Brazil
 - **Prof. Jon Lee**, University of Michigan, Ann Arbor, MI, USA
 - **Felipe Sinnecker**, Universidade Federal do Rio de Janeiro, Brazil
-
-```
