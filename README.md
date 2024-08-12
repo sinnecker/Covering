@@ -25,8 +25,6 @@ You can install these dependencies using the following command:
 pip install -r requirements.txt
 ```
 
-*Ensure that the `requirements.txt` file is updated with all the necessary packages.*
-
 ## Optimization Solver
 
 This project uses **Gurobi** to solve the optimization problems related to the Set Covering Problem. Gurobi is a state-of-the-art mathematical programming solver that efficiently handles large-scale linear and mixed-integer programming problems.
