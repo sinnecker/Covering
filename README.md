@@ -1,6 +1,3 @@
-Here’s the generated `README.md` file:
-
-```markdown
 # Set Covering Problem Solver
 
 This project provides a comprehensive solution for instances of the Set Covering Problem (SCP). It includes code for generating problem instances, reducing problem matrices, solving the instances, and plotting the results.
