@@ -43,6 +43,7 @@ def check_intersection(edge,circle):
     #vector from the extreme of the edge to the center of the circle
     u = p1-center
     
+
     #quadratic coefficients
     a = np.dot(vector,vector)
     b = 2*np.dot(vector,u)
@@ -127,14 +128,15 @@ def generate_problem(nodes, circles, rmin, rmax, method=1):
     delauny = eliminate_hull(delauny_triag.simplices,hull.simplices) 
 
     #generates circle data
-    circles_data = [(Rs[i],Ps[i]) for i in range(p)]
+    circles_data = [(Rs[i],Ps[i]) for i in range(circles)]
 
     #generate edges
     edges = list(T1.edges)+delauny
+    edges_data = [np.array([Vs[index1],Vs[index2]]) for (index1,index2) in edges]
     Nedges = len(edges)
     
    
-    A, New_edges = generate_data(edges,circles_data)
+    A, New_edges = generate_data(edges_data,circles_data)
     NP = 1
     #while the problem is infeasible
     while np.any(np.sum(A, axis=1)<1):
@@ -151,10 +153,10 @@ def generate_problem(nodes, circles, rmin, rmax, method=1):
         Rs = np.random.uniform(rmin,rmax,circles_data)
 
         Ws = np.random.uniform(0.5,1.5)*Rs**2
-        circles = [(Rs[i],Ps[i]) for i in range(p)]
-        A, New_edges = generate_data(edges,circles_data)
+        circles = [(Rs[i],Ps[i]) for i in range(circles)]
+        A, New_edges = generate_data(edges_data,circles_data)
 
-    print("Number of problems generated: ",NP)")
+    print("Number of problems generated: ",NP)
 
     return A, edges, New_edges, circles_data, Ws, circles, Vs, rmin, rmax, Nedges
 

@@ -4,7 +4,14 @@ import os
 from scipy.io import savemat
 from generate_auxiliar import generate_problem
 
-def main(nodes, circles, rmin, rmax, path, method=1):
+def main(nodes, circles, rmin, rmax, path, name, method=1):
+
+
+    try: 
+        os.makedirs( path, exist_ok = True) 
+
+    except OSError as error: 
+        None
 
     A, edges, New_edges, circles_data, weights, circles, nodes_data, rmin, rmax, Nedges = generate_problem(nodes, circles, rmin, rmax, method)
 
@@ -26,7 +33,7 @@ def main(nodes, circles, rmin, rmax, path, method=1):
     Save_data["one_rows"] = len(np.where(np.array([sum(k) for k in A])==1)[0])
     Save_data["Full_Edges"] = edges
 
-    savemat(path, Save_data)
+    savemat(path+"/"+name, Save_data)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a Set Covering Problem Instance")
@@ -35,8 +42,9 @@ if __name__ == "__main__":
     parser.add_argument("--rmin", type=float, required=True, help="Minimum radius of circles")
     parser.add_argument("--rmax", type=float, required=True, help="Maximum radius of circles")
     parser.add_argument("--path", type=str, required=True, help="Path to save the output data folder ")
+    parser.add_argument("--name", type=str, required=True, help="Name of the output file with data ")
     parser.add_argument("--method", type=int, default=1, help="Method for instance generation (default: 1)")
     
     args = parser.parse_args()
 
-    main(args.nodes, args.circles, args.rmin, args.rmax, args.path, args.method)
+    main(args.nodes, args.circles, args.rmin, args.rmax, args.path, args.name, args.method)
