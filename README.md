@@ -4,9 +4,9 @@ This project provides a comprehensive solution for instances of the Set Covering
 
 ## Project Structure
 
-- **generate/**: Contains the code for generating all instances of the Set Covering Problem.
-- **reduction/**: Contains the code for reducing the matrices of the problem instances.
-- **solver_notebook.ipynb**: A Jupyter notebook that includes the code to solve the SCP instances and plot the results.
+- **generate_instance.py**: Contains the code for generating all instances of the Set Covering Problem.
+- **generate_models.py**: Contains the code for generating and solving the SCP instances.
+- **Example_notebook.ipynb**: A Jupyter notebook that includes examples of the SCP instances and plot the results.
 
 ## Dependencies
 
