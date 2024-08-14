@@ -37,13 +37,7 @@ To get started with this project, follow these steps:
     cd Covering
     ```
 
-2. **Install the required dependencies:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Set up Gurobi:**
+2. **Set up Gurobi:**
 
     Make sure Gurobi is properly installed and licensed on your system. You can refer to the [Gurobi installation guide](https://www.gurobi.com/documentation/) for assistance.
 
