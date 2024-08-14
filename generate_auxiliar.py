@@ -53,12 +53,27 @@ def check_intersection(edge,circle):
     delta = (b**2 - 4*a*c)
     
     #no intersection
-    if delta<0:
+    if delta<0 :
         return 0,None
 
     # 2 intersections and computes the intersection
     return 2, ((-b-np.sqrt(delta))/(2*a),(-b+np.sqrt(delta))/(2*a))
 
+
+def check_inside(edge,circle,tol=1e-6):
+    
+
+    p1,p2 = edge
+    R,center = circle
+    
+    #computes the distance of the end points to the center
+    d1 = np.linalg.norm(p1-center)
+    d2 = np.linalg.norm(p2-center)
+
+    if d1+tol<R or d2+tol<R:
+        return True
+    
+    return False
 
 def generate_data(edges,circles):
     
@@ -95,7 +110,7 @@ def generate_data(edges,circles):
 
             row = []
             for circle in circles:
-                check,_ = check_intersection(new_edge,circle)
+                check = check_inside(new_edge,circle)
                 row.append(1 if check else 0)
 
             A = np.vstack([A, row])
@@ -142,18 +157,22 @@ def generate_problem(nodes, circles, rmin, rmax, method=1):
     while np.any(np.sum(A, axis=1)<1):
         NP += 1
         
+        #increase the number of circles or increase the radii
+
         if method==1:
             circles = int(np.round(circles*1.1))
 
         if method==2:
-            R_min = R_min*1.1
-            R_max = R_max*1.1
+            rmin = rmin*1.1
+            rmax = rmax*1.1
         
+
+        #generate the data again
         Ps = np.random.rand(circles,2)
-        Rs = np.random.uniform(rmin,rmax,circles_data)
+        Rs = np.random.uniform(rmin,rmax,circles)
 
         Ws = np.random.uniform(0.5,1.5)*Rs**2
-        circles = [(Rs[i],Ps[i]) for i in range(circles)]
+        circles_data = [(Rs[i],Ps[i]) for i in range(circles)]
         A, New_edges = generate_data(edges_data,circles_data)
 
     print("Number of problems generated: ",NP)
@@ -162,3 +181,88 @@ def generate_problem(nodes, circles, rmin, rmax, method=1):
 
 
 
+def Update_Cols(A,circles_data,edges_data,Ws,rmin,rmax,tol=1e-6):
+    
+    #find all the colums with no intersections
+    Zero_cols = np.where(np.array([sum(k) for k in A.T])==0)[0]
+    
+    if len(Zero_cols)==0:
+        return A,circles_data,edges_data,Ws,rmax
+    
+    for k in Zero_cols:
+            
+        r,center = circles_data[k]
+        control = True
+        
+        #while not intersected
+        while control:
+            
+            #increase radius 
+            r *=1.1
+            
+            #update rmax if necessary
+            if r>rmax:
+                rmax = r
+            
+            #update the circle data
+            Ws[k] = Ws[k]+r+1.21
+            circles_data[k] = (r,center)
+            
+            new_edges = []
+            out_edges = []
+            new_rows = []
+
+            for j,edge in enumerate(edges_data):
+                p1,p2 = edge
+                subintervals = [0,1]
+                n,intersections = check_intersection(edge,circles_data[k])
+                
+                
+                if n==2:
+
+                    #save old edges to eliminate from the rows and data
+                    
+                    #check if the projection is in [0,1]
+                    for i in intersections:
+                        if 0+tol< i < 1-tol:
+                            if i not in subintervals:
+                                subintervals.append(i)
+                                #stop the increase on the radii
+                                control = False
+                                out_edges.append(j)
+                    subintervals.sort()
+
+                    if len(subintervals)>2:
+                        #computes the new edges and the new rows
+                        for start, end in zip(subintervals[:-1], subintervals[1:]):
+                            new_edge_start = p1 + start * (p2 - p1)
+                            new_edge_end = p1 + end * (p2 - p1)
+                            new_edge = np.array([new_edge_start,new_edge_end])
+
+                            row = []
+                            for circle in circles_data:
+                                check = check_inside(new_edge,circle)
+                                row.append(1 if check else 0)
+
+                            new_rows.append(row)
+                            new_edges.append(new_edge)
+
+
+        
+        #adds the new_edges to the existing list
+        for edge,row in zip(new_edges,new_rows):
+            edges_data.append(edge)
+            A = np.vstack([A, row])
+            
+        
+        #filters the old edges and rows
+        mask = np.ones(A.shape[0],dtype=bool)
+        for j in out_edges:
+            mask[j] = False
+        edges_data = [item for item, m in zip(edges_data, mask) if m]
+        A = A[mask]
+            
+            #updates the circle data
+        circles_data[k] = (r,center)
+            
+    return A,circles_data,edges_data,Ws,rmax
