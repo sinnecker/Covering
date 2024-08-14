@@ -1,0 +1,74 @@
+
+Gurobi 10.0.2 (linux64) logging started Wed Aug 14 09:50:10 2024
+
+Set parameter LogFile to value "Logs/Inst_teste/MIP"
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Optimize a model with 450 rows, 44 columns and 2621 nonzeros
+Model fingerprint: 0x4fbf9396
+Variable types: 0 continuous, 44 integer (44 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [7e-03, 5e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.4115700
+Presolve removed 433 rows and 23 columns
+Presolve time: 0.00s
+Presolved: 17 rows, 21 columns, 55 nonzeros
+Found heuristic solution: objective 0.3520931
+Variable types: 0 continuous, 21 integer (21 binary)
+Found heuristic solution: objective 0.3520808
+
+Root relaxation: objective 3.071049e-01, 15 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       0.3071049    0.30710  0.00%     -    0s
+
+Explored 1 nodes (15 simplex iterations) in 0.01 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 4: 0.307105 0.352081 0.352093 0.41157 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.071049346339e-01, best bound 3.071049346339e-01, gap 0.0000%
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+
+Gurobi 10.0.2 (linux64) logging started Wed Aug 14 09:50:20 2024
+
+Set parameter LogFile to value "Logs/Inst_teste/MIP"
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Optimize a model with 507 rows, 40 columns and 3670 nonzeros
+Model fingerprint: 0x8184d53f
+Variable types: 0 continuous, 40 integer (40 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e-02, 2e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 1.1847013
+Presolve removed 507 rows and 40 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 0.80742 1.1847 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.074197781432e-01, best bound 8.074197781432e-01, gap 0.0000%
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Presolve removed 507 rows and 40 columns
+Presolve time: 0.00s
