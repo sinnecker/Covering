@@ -1,0 +1,62 @@
+
+Gurobi 10.0.2 (linux64) logging started Wed Aug 14 03:51:25 2024
+
+Set parameter LogFile to value "Logs/Inst_10_30_6/Cont_p"
+Set parameter TimeLimit to value 7200
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Optimize a model with 7467 rows, 7200 columns and 21450 nonzeros
+Model fingerprint: 0xd4e9252e
+Model has 14220 quadratic constraints
+Variable types: 60 continuous, 7140 integer (7140 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  QMatrix range    [1e+00, 1e+00]
+  QLMatrix range   [3e-01, 2e+00]
+  Objective range  [2e-02, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [7e-03, 1e+00]
+  QRHS range       [8e-01, 2e+00]
+Presolve added 3668 rows and 0 columns
+Presolve removed 0 rows and 3400 columns
+Presolve time: 0.17s
+Presolved: 11135 rows, 3800 columns, 40225 nonzeros
+Presolved model has 30 quadratic constraint(s)
+Variable types: 90 continuous, 3710 integer (3710 binary)
+
+Root relaxation: objective 1.660349e-02, 2790 iterations, 0.01 seconds (0.02 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.01660    0    -          -    0.01660      -     -    0s
+     0     0    0.04846    0  399          -    0.04846      -     -    0s
+     0     0    0.11042    0   34          -    0.11042      -     -    0s
+     0     0    0.11042    0   28          -    0.11042      -     -    0s
+     0     0    0.11050    0  169          -    0.11050      -     -    0s
+     0     0    0.11793    0  393          -    0.11793      -     -    0s
+     0     0    0.11793    0  393          -    0.11793      -     -    0s
+     0     0    0.14696    0  400          -    0.14696      -     -    0s
+     0     0    0.15705    0    -          -    0.15705      -     -    0s
+     0     0    0.15857    0  364          -    0.15857      -     -    0s
+H    0     0                       0.2933953    0.15857  46.0%     -    1s
+H    0     0                       0.2774695    0.15857  42.9%     -    1s
+H    0     0                       0.1940911    0.18030  7.11%     -    1s
+     0     0    0.19409    0  363    0.19409    0.19409  0.00%     -    1s
+
+Cutting planes:
+  MIR: 24
+  StrongCG: 2
+  RLT: 26
+
+Explored 1 nodes (9969 simplex iterations) in 1.06 seconds (1.40 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 0.194091 0.27747 0.293395 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.940911332151e-01, best bound 1.940911332151e-01, gap 0.0000%

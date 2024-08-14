@@ -1,0 +1,33 @@
+
+Gurobi 10.0.2 (linux64) logging started Wed Aug 14 03:46:01 2024
+
+Set parameter LogFile to value "Logs/Inst_10_30_0/MIP"
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Optimize a model with 191 rows, 36 columns and 730 nonzeros
+Model fingerprint: 0x83c7716f
+Variable types: 0 continuous, 36 integer (36 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e-02, 2e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.4634447
+Presolve removed 191 rows and 36 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 0.463007 0.463445 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 4.630070439310e-01, best bound 4.630070439310e-01, gap 0.0000%
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Presolve removed 191 rows and 36 columns
+Presolve time: 0.00s

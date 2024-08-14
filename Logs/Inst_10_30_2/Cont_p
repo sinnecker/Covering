@@ -1,0 +1,82 @@
+
+Gurobi 10.0.2 (linux64) logging started Wed Aug 14 03:48:11 2024
+
+Set parameter LogFile to value "Logs/Inst_10_30_2/Cont_p"
+Set parameter TimeLimit to value 7200
+Gurobi Optimizer version 10.0.2 build v10.0.2rc0 (linux64)
+
+CPU model: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 941647 - for non-commercial use only - registered to si___@cos.ufrj.br
+Optimize a model with 6103 rows, 5880 columns and 17490 nonzeros
+Model fingerprint: 0xefc477e5
+Model has 11580 quadratic constraints
+Variable types: 60 continuous, 5820 integer (5820 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  QMatrix range    [1e+00, 1e+00]
+  QLMatrix range   [9e-02, 2e+00]
+  Objective range  [1e-02, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e-03, 1e+00]
+  QRHS range       [9e-02, 2e+00]
+Presolve added 1545 rows and 0 columns
+Presolve removed 0 rows and 3149 columns
+Presolve time: 0.17s
+Presolved: 7648 rows, 2731 columns, 27405 nonzeros
+Presolved model has 30 quadratic constraint(s)
+Variable types: 90 continuous, 2641 integer (2641 binary)
+
+Root relaxation: objective 6.016560e-02, 1563 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.06017    0    4          -    0.06017      -     -    0s
+     0     0    0.06017    0    -          -    0.06017      -     -    0s
+     0     0    0.07213    0  359          -    0.07213      -     -    0s
+     0     0    0.12682    0    -          -    0.12682      -     -    0s
+     0     0    0.12784    0  345          -    0.12784      -     -    0s
+     0     0    0.12784    0  345          -    0.12784      -     -    0s
+     0     0    0.20779    0    6          -    0.20779      -     -    0s
+     0     0    0.28207    0  240          -    0.28207      -     -    0s
+     0     0    0.28207    0  249          -    0.28207      -     -    0s
+     0     0    0.28392    0  260          -    0.28392      -     -    0s
+     0     0    0.28392    0  260          -    0.28392      -     -    0s
+     0     0    0.28926    0   26          -    0.28926      -     -    0s
+     0     0    0.28926    0   20          -    0.28926      -     -    0s
+     0     0    0.29022    0  334          -    0.29022      -     -    0s
+     0     0    0.29038    0  303          -    0.29038      -     -    0s
+     0     0    0.29041    0  301          -    0.29041      -     -    0s
+     0     0    0.29041    0  312          -    0.29041      -     -    0s
+     0     0    0.30123    0   12          -    0.30123      -     -    0s
+     0     0    0.30123    0    7          -    0.30123      -     -    0s
+H    0     0                       0.5354712    0.30123  43.7%     -    0s
+     0     0    0.30123    0   18    0.53547    0.30123  43.7%     -    0s
+     0     0    0.30123    0   18    0.53547    0.30123  43.7%     -    0s
+H    0     0                       0.3611867    0.30123  16.6%     -    1s
+     0     0    0.30123    0    8    0.36119    0.30123  16.6%     -    1s
+     0     0    0.30123    0   12    0.36119    0.30123  16.6%     -    1s
+     0     0    0.30126    0  329    0.36119    0.30126  16.6%     -    1s
+     0     0    0.30126    0   12    0.36119    0.30126  16.6%     -    6s
+     0     0    0.30503    0  281    0.36119    0.30503  15.5%     -    6s
+     0     0    0.30741    0  339    0.36119    0.30741  14.9%     -    6s
+     0     0    0.31425    0   13    0.36119    0.31425  13.0%     -    6s
+     0     0    0.31425    0    6    0.36119    0.31425  13.0%     -    6s
+     0     0    0.31425    0    5    0.36119    0.31425  13.0%     -    6s
+     0     0    0.31425    0    9    0.36119    0.31425  13.0%     -    6s
+H    0     0                       0.3142492    0.31425  0.00%     -    7s
+
+Cutting planes:
+  Gomory: 4
+  MIR: 18
+  Inf proof: 1
+
+Explored 1 nodes (8092 simplex iterations) in 7.02 seconds (3.41 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 0.314249 0.361187 0.535471 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.142491941422e-01, best bound 3.142491941422e-01, gap 0.0000%
