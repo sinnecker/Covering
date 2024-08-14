@@ -18,12 +18,7 @@ Before running the project, ensure you have the following Python packages instal
 - `time`
 - `scipy`
 - `gurobipy`
-
-You can install these dependencies using the following command:
-
-```bash
-pip install -r requirements.txt
-```
+- `os`
 
 ## Optimization Solver
 
@@ -51,34 +46,6 @@ To get started with this project, follow these steps:
 3. **Set up Gurobi:**
 
     Make sure Gurobi is properly installed and licensed on your system. You can refer to the [Gurobi installation guide](https://www.gurobi.com/documentation/) for assistance.
-
-## Usage
-
-1. **Generating Instances:**
-
-    To generate problem instances, run the scripts located in the `generate/` directory. This will create the data necessary for testing and solving the SCP.
-
-    ```bash
-    python generate/generate_instances.py
-    ```
-
-2. **Matrix Reduction:**
-
-    Use the scripts in the `reduction/` directory to reduce the matrices of the problem instances. This step helps simplify the problem and optimize the solution process.
-
-    ```bash
-    python reduction/reduce_matrix.py
-    ```
-
-3. **Solving Instances:**
-
-    Open the `solver_notebook.ipynb` file in Jupyter Notebook. This notebook contains code to solve the SCP instances and visualize the results.
-
-    ```bash
-    jupyter notebook solver_notebook.ipynb
-    ```
-
-    In the notebook, you'll find cells to execute the solver, using Gurobi, and generate plots that illustrate the solutions.
 
 ## Contributions
 
