@@ -116,7 +116,7 @@ def Strong_fixing(A,ws,circles,UB,order_function):
             #computes the reduced costs
             rc = newWs - newA.T@solution
             #store all fixed variables
-            for k in np.where(rc > Data["OV"] - Ffix - sum(solution) + 1e-6)[0]:
+            for k in np.where(rc > UB - sum(solution) + 1e-6)[0]:
                 if k not in Fixed:
                     Fixed.append(k)
         
@@ -136,5 +136,6 @@ def Strong_fixing(A,ws,circles,UB,order_function):
     newA,Colcutt,Fix = Reduction_simple(newA,newWs)
     Ffix = sum(newWs[Fix])#possible fixed 1 variables
     newWs =  newWs[Colcutt]
+
 
     return newA,newWs,Fixed
